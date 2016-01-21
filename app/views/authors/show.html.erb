@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row heading">
+		<span class="header"><%= @author.full_name %></span>
+		<%= link_to "Add Book", new_book_path, class: "btn btn-default right-btn" %>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="well">
+				<strong><%= @author.year_born %></strong>
+				<% if @author.year_died %>
+					<%= @author.year_died %>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-xs-9">
+			<ul>
+			<% @author.books.each do |book| %>
+				<li><strong><%= book.title %></strong> (<%= book.release_year %>)</li>
+			<% end %>
+			</ul>
+		</div>	
+	</div>
+	</div>
+
+</div>

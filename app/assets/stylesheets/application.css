@@ -10,6 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap-3.3.6.min
  *= require_tree .
  *= require_self
  */
+
+
+.right-btn {
+	float:right;
+}
+
+.heading {
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+.header {
+	font-size: 2.3em;
+	font-weight: bold;
+}
