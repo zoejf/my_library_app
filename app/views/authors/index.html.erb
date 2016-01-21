@@ -12,7 +12,9 @@
 					<img src="<%= author.image %>" alt="Portrait of <%= author.full_name %>" class="author-photo">
 				</div>
 				<strong><%= author.full_name %></strong><br>
-				<%= author.books.length %> Book	
+				<div class="books-count">
+					<span><%= author.books.length %> Book<span>
+				</div>
 			</div>
 		</div>
 	<% end %>

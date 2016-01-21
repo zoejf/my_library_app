@@ -16,7 +16,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand">My Library</a>
+	      <%= link_to "My Library", root_path, class: "navbar-brand" %>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
@@ -24,7 +24,7 @@
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><%= link_to "Books", books_path %></li>
-	        <li><%= link_to "Author", authors_path %></li>
+	        <li><%= link_to "Authors", authors_path %></li>
 	      </ul>
 	    </div><!-- end .navbar-collapse -->
 	  </div><!-- end .container-fluid -->
