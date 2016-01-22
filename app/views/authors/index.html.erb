@@ -6,17 +6,26 @@
 
 	<div class="row">
 	<% @authors.each do |author| %>
-		<div class="col-sm-3 col-xs-6">
-			<div class="author well">
-				<div>
-					<img src="<%= author.image %>" alt="Portrait of <%= author.full_name %>" class="author-photo">
-				</div>
-				<strong><%= author.full_name %></strong><br>
-				<div class="books-count">
-					<span><%= author.books.length %> Book<span>
-				</div>
+			<div class="col-sm-3 col-xs-6 author">
+				<%= link_to(author_path(author)) do %>
+					<div class="well">
+						<div>
+							<img src="<%= author.image %>" alt="Portrait of <%= author.full_name %>" class="author-photo">
+						</div>
+						<strong><%= author.full_name %></strong><br>
+						<div class="books-count">
+							<span>
+								<%= author.book_count %> 
+								<% if author.book_count == 1 %> 
+									Book
+								<% else %>
+									Books
+								<% end %>
+							<span>
+						</div>
+					</div>
+				<% end %>
 			</div>
-		</div>
 	<% end %>
 	</div>
 	

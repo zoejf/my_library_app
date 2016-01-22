@@ -1,24 +1,37 @@
 <div class="container">
 	<div class="row heading">
 		<span class="header"><%= @author.full_name %></span>
-		<%= link_to "Add Book", new_book_path, class: "btn btn-default right-btn" %>
+		<%= link_to "Add a Book by #{@author.last_name}", new_book_path, class: "btn btn-default right-btn" %>
 	</div>
 	
 	<div class="row">
-		<div class="col-xs-3">
-			<div class="well">
-				<strong><%= @author.year_born %></strong>
+		<div class="col-xs-5">
+			<div class="well author-details"> 
+				<div>
+					<img src="<%= @author.image %>" alt="Portrait of <%= @author.full_name %>" class="author-photo-lrg">
+				</div>
+				<strong>Year of Birth: </strong><%= @author.year_born %> <br>
 				<% if @author.year_died %>
-					<%= @author.year_died %>
+					<strong> Year of Death: </strong><%= @author.year_died %>
 				<% end %>
+				<div class="buttons">
+					<%= link_to "Edit", edit_author_path(@author), class: "btn btn-success" %>
+					<%= link_to "Delete", author_path(@author), method: :delete, class: "btn btn-default" %>
+				</div>
 			</div>
 		</div>
-		<div class="col-xs-9">
-			<ul>
-			<% @author.books.each do |book| %>
-				<li><strong><%= book.title %></strong> (<%= book.release_year %>)</li>
+		<div class="col-xs-7">
+			<% if @author.books.any? %>
+				<ul>
+				<% @author.books.each do |book| %>
+					<li><strong><%= book.title %></strong> (<%= book.release_year %>)</li>
+				</ul>
+				<% end %>
+			<% else %>
+				<h4>
+					No books listed yet... <%= link_to "You can add one.", new_book_path %>
+				</h4>
 			<% end %>
-			</ul>
 		</div>	
 	</div>
 	</div>

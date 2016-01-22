@@ -5,4 +5,8 @@ class Author < ActiveRecord::Base
 		"#{first_name} #{last_name}"
 	end
 
+	def book_count
+		books.length
+	end
+
 end

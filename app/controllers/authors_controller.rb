@@ -25,15 +25,23 @@ class AuthorsController < ApplicationController
 	end
 
 	def edit
-		
+		author_id = params[:id]
+		@author = Author.find_by_id(author_id)
+		render :edit
 	end
 
 	def update
-		
+		author_id = params[:id]
+		author = Author.find_by_id(author_id)
+		author.update_attributes(author_params)
+		redirect_to author_path(author)
 	end
 
 	def destroy
-		
+		author_id = params[:id]
+		author = Author.find_by_id(author_id)
+		author.destroy
+		redirect_to authors_path
 	end
 
 	private

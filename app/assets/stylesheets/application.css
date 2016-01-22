@@ -35,7 +35,7 @@ h1 {
 	font-weight: bold;
 }
 
-.well.author, .well.book {
+.author .well, .well.book {
 	padding: 10px;
 	text-align: center;
 	height: 350px;

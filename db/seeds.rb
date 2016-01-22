@@ -2,6 +2,7 @@ martel = Author.create({first_name:"Yann", last_name:"Martel", year_born: 1963, 
 chabon = Author.create({first_name:"Michael", last_name:"Chabon", year_born: 1963, year_died: :nill, image: "http://www.newyorker.com/wp-content/uploads/2012/09/chabon.jpg"})
 kingsolver = Author.create({first_name:"Barbara", last_name:"Kingsolver", year_born: 1955, year_died: :nill, image: "http://s3.amazonaws.com/media.wbur.org/wordpress/11/files/2012/11/1109_butterflies-author.jpg"})
 fitzgerald = Author.create({first_name:"F. Scott", last_name:"Fitzgerald", year_born: 1896, year_died: 1940, image: "https://d.gr-assets.com/authors/1427040571p8/3190.jpg"})
+orwell = Author.create({first_name:"George", last_name:"Orwell", year_born: 1903, year_died: 1950, image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/George-orwell-BBC.jpg"})
 
 pi = Book.create({title: "Life of Pi", release_year: 2001, image: "https://upload.wikimedia.org/wikipedia/en/4/45/Life_of_Pi_cover.png"})
 kavalier = Book.create({title: "The Amazing Adventures of Kavalier & Clay", release_year: 2000, image: "http://3.bp.blogspot.com/-6atNHO5r2pk/VOzrkEUrLAI/AAAAAAAAA60/7lUKDlv0IIw/s1600/gal-book-amazing-adventures-of-kavalier-and-clay-jpg.jpg"})
