@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="row">
-	<% @authors.each do |author| %>
+	<% @authors.order("last_name asc").each do |author| %>
 			<div class="col-sm-3 col-xs-6 author">
 				<%= link_to(author_path(author)) do %>
 					<div class="well">

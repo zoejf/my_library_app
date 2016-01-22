@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="row heading">
+			<div class="col-xs-6 col-xs-offset-3 edit-heading">
+				<span>Add a Book <br> by <%= @author.full_name %></span>
+			</div>
+			<%= link_to "Return to #{@author.last_name}", author_path(@author), class: "btn btn-default return-btn" %>
+		</div>
+		<div class="col-xs-6 col-xs-offset-3">
+			<%= form_for @book do |f| %>
+				<div class="form-group">
+					<%= f.label :title, "Title" %>
+				  <%= f.text_field :title, required: true, placeholder: "Around the World in 80 Days", class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :release_year, "Original Publication Year" %>
+					<%= f.number_field :release_year, required: true, placeholder: "YYYY", class: "form-control"  %>
+				</div>
+				<div class="form-group">
+					<%= f.label :image, "Book Cover Image" %>
+					<%= f.text_field :image, placeholder: "http://example-image.jpg", class: "form-control" %>
+				</div>
+				<%= f.hidden_field :author_id, value: @author_id %>
+				<%= f.submit "Save Book", class: "btn btn-default submit-btn" %>
+			<% end %>
+		</div>
+	</div>
+
+</div>

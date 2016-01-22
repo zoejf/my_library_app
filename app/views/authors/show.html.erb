@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row heading">
 		<span class="header"><%= @author.full_name %></span>
-		<%= link_to "Add a Book by #{@author.last_name}", new_book_path, class: "btn btn-default right-btn" %>
+		<%= link_to "Add a Book by #{@author.last_name}", new_book_path(@author), class: "btn btn-default right-btn" %>
 	</div>
 	
 	<div class="row">
@@ -29,7 +29,7 @@
 				<% end %>
 			<% else %>
 				<h4>
-					No books listed yet... <%= link_to "You can add one.", new_book_path %>
+					No books listed yet... <%= link_to "You can add one.", new_book_path(@author) %>
 				</h4>
 			<% end %>
 		</div>	

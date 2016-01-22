@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="col-xs-6 col-xs-offset-3">
 		<h1>Add An Author to The Library</h1>
-		<%= form_for @author do |f| -%>
+		<%= form_for @author do |f| %>
 			<div class="form-group">
 				<%= f.label :first_name, "First Name" %>
 			  <%= f.text_field :first_name, required: true, placeholder: "F. Scott", class: "form-control" %>

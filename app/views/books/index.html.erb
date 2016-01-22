@@ -4,7 +4,7 @@
 	</div>
 
 	<div class="row">  
-	<% @books.each do |book| %>
+	<% @books.order("title asc").each do |book| %>
 		<div class="col-sm-3 col-xs-6">
 			<div class="book well">
 				<div>
@@ -13,7 +13,6 @@
 				<div class="book-title">
 					<strong><%= book.title %></strong><br>	
 				</div>
-				
 				by 
 				<%= link_to(author_path(book.author)) do %>
 					<%= book.author.full_name %>
