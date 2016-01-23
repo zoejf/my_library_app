@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.author .well {
+	padding: 10px;
+	text-align: center;
+	height: 330px;
+}
+
+.form-inline-left {
+	display: inline-block;
+	width: 40%;
+}
+
+.form-inline-right {
+	display: inline-block;
+	float: right;
+	width: 50%;
+}
+
 .author-details {
 	text-align: center;	
 }

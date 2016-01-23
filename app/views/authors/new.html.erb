@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-xs-6 col-xs-offset-3">
-		<h1>Add An Author to The Library</h1>
+		<h2>Add An Author to The Library</h2>
 		<%= form_for @author do |f| %>
 			<div class="form-group">
 				<%= f.label :first_name, "First Name" %>
@@ -11,12 +11,18 @@
 			  <%= f.text_field :last_name, required: true, placeholder: "Fitzgerald", class: "form-control" %>
 			</div>
 			<div class="form-group">
-			  <%= f.label :year_born, "Year of Birth" %>
-			  <%= f.number_field :year_born, required: true, placeholder: "YYYY", class: "form-control" %>
+			  <span class="form-inline-left">
+				  <%= f.label :year_born, "Year of Birth" %>
+				  <%= f.number_field :year_born, required: true, placeholder: "YYYY", class: "form-control" %>
+			  </span>
+			  <span class="form-inline-right">
+				  <%= f.label :year_born, "Year of Death" %>
+				  <%= f.number_field :year_died, placeholder: "YYYY (Leave blank if still alive)", class: "form-control" %>
+			  </span>
 			</div>
 			<div class="form-group">
-			  <%= f.label :year_born, "Year of Death" %>
-			  <%= f.number_field :year_died, placeholder: "YYYY (Leave blank if still alive)", class: "form-control" %>
+			  <%= f.label :bio, "Biography" %>
+			  <%= f.text_area :bio, placeholder: "Include a short biography of the author", size: "10x3", class: "form-control" %>
 			</div>
 			<div class="form-group">
 			  <%= f.label :image, "Image" %>

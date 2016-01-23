@@ -21,8 +21,7 @@
 			</div>
 		</div>
 		<div class="col-xs-7">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam ipsum magnam, commodi aliquid mollitia officiis, asperiores quasi nisi nostrum quaerat culpa nobis. Ab ex dolorum, tempore reprehenderit reiciendis nesciunt sapiente.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores aut voluptatibus ipsam nesciunt quaerat veniam aspernatur eveniet quidem, quas sequi id magni impedit sed delectus molestias odio fugit voluptate, voluptates.</p>
+			<p><%= @author.bio %></p>
 			<% if @author.books.any? %>
 				<div class="row">
 				<% @author.books.each do |book| %>
