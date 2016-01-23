@@ -2,8 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.book-cover {
+	text-align: center;
+}
+
+.book-details {
+	margin-top: 20px;
+}
 .book-title {
 	margin-bottom: 5px; 
+}
+
+.book-photo-lrg {
+	max-height: 300px;
+	max-width: 250px;
+	border-radius: 5px;
+	margin: 20px auto;
 }
 
 .return-btn {
@@ -16,4 +30,8 @@
 	text-align: center;
 	font-size: 1.8em;
 	font-weight: bold;
+}
+
+.synopsis {
+	margin-top: 20px;
 }

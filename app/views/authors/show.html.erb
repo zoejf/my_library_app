@@ -21,12 +21,19 @@
 			</div>
 		</div>
 		<div class="col-xs-7">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam ipsum magnam, commodi aliquid mollitia officiis, asperiores quasi nisi nostrum quaerat culpa nobis. Ab ex dolorum, tempore reprehenderit reiciendis nesciunt sapiente.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores aut voluptatibus ipsam nesciunt quaerat veniam aspernatur eveniet quidem, quas sequi id magni impedit sed delectus molestias odio fugit voluptate, voluptates.</p>
 			<% if @author.books.any? %>
-				<ul>
+				<div class="row">
 				<% @author.books.each do |book| %>
-					<li><strong><%= book.title %></strong> (<%= book.release_year %>)</li>
-				</ul>
-				<% end %>
+					<div class="col-xs-5"> 
+						<div class="well book-thumbnail-container">
+							<img src="<%= book.image %>" alt="Cover image for <%= book.title %>" class="book-thumbnail"><br>
+							<strong><%= link_to "#{book.title}", book_path(book) %></strong> (<%= book.release_year %>)
+						</div>
+					</div>
+				<% end %>	
+				</div>
 			<% else %>
 				<h4>
 					No books listed yet... <%= link_to "You can add one.", new_book_path(@author) %>

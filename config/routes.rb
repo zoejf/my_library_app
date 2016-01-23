@@ -4,17 +4,20 @@ Rails.application.routes.draw do
 
  get '/authors/:id/books', to: 'books#new', as: 'new_book'
 
- resources :books, only: [:index, :create]
+ resources :books, only: [:index, :create, :show, :destroy]
  resources :authors
 
  resources :users, only: [:new, :create]
 end
+
 
 #      Prefix Verb   URI Pattern                  Controller#Action
 #        root GET    /                            authors#index
 #    new_book GET    /authors/:id/books(.:format) books#new
 #       books GET    /books(.:format)             books#index
 #             POST   /books(.:format)             books#create
+#        book GET    /books/:id(.:format)         books#show
+#             DELETE /books/:id(.:format)         books#destroy
 #     authors GET    /authors(.:format)           authors#index
 #             POST   /authors(.:format)           authors#create
 #  new_author GET    /authors/new(.:format)       authors#new

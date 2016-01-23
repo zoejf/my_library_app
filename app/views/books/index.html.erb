@@ -11,12 +11,10 @@
 					<img src="<%= book.image %>" alt="Cover image of <%= book.title %>" class="book-photo">
 				</div>
 				<div class="book-title">
-					<strong><%= book.title %></strong><br>	
+					<strong><%= link_to "#{book.title}", book_path(book) %></strong><br>	
 				</div>
 				by 
-				<%= link_to(author_path(book.author)) do %>
-					<%= book.author.full_name %>
-				<% end %>
+				<%= link_to "#{book.author.full_name}", author_path(book.author) %>
 				<div>
 					<p>Originally Published: <%= book.release_year %></p>
 				</div>

@@ -5,6 +5,12 @@ class BooksController < ApplicationController
 		render :index
 	end
 
+	def show
+		@book = Book.find(params[:id])
+		@author = Author.find(@book.author_id)
+		render :show
+	end
+
 	def new
 		@author_id = params[:id]
 		@author = Author.find(params[:id])
@@ -16,7 +22,6 @@ class BooksController < ApplicationController
 		book = Book.new(book_params)
 		author = Author.find(book_params[:author_id])
 		if book.save
-			# book.author_id = book_params.author_id
 			redirect_to author_path(author)
 		else
 			redirect_to new_book_path(author)
@@ -24,7 +29,10 @@ class BooksController < ApplicationController
 	end
 
 	def destroy
-		
+		book_id = params[:id]
+		book = Book.find_by_id(book_id)
+		book.destroy
+		redirect_to books_path
 	end
 
 	private
