@@ -1,0 +1,23 @@
+	<%= form_for @author do |f| -%>
+			<div class="form-group">
+				<%= f.label :first_name, "First Name" %>
+			  <%= f.text_field :first_name, required: true, placeholder: "F. Scott", class: "form-control" %>
+			</div>
+			<div class="form-group">
+			  <%= f.label :last_name, "Last Name" %>
+			  <%= f.text_field :last_name, required: true, placeholder: "Fitzgerald", class: "form-control" %>
+			</div>
+			<div class="form-group">
+			  <%= f.label :year_born, "Year of Birth" %>
+			  <%= f.number_field :year_born, required: true, placeholder: "YYYY", class: "form-control" %>
+			</div>
+			<div class="form-group">
+			  <%= f.label :year_born, "Year of Death" %>
+			  <%= f.number_field :year_died, placeholder: "YYYY (Leave blank if still alive)", class: "form-control" %>
+			</div>
+			<div class="form-group">
+			  <%= f.label :image, "Image" %>
+			  <%= f.text_field :image, placeholder: "http://example-image.jpg", class: "form-control" %>
+			</div>
+		  <%= f.submit "Save Author", class: "btn btn-default submit-btn" %>
+		<% end %>
