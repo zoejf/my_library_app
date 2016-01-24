@@ -12,27 +12,42 @@ class BooksController < ApplicationController
 	end
 
 	def new
-		@author_id = params[:id]
-		@author = Author.find(params[:id])
-		@book = Book.new
-		render :new
+		if current_user
+			@author_id = params[:id]
+			@author = Author.find(params[:id])
+			@book = Book.new
+			render :new
+		else
+			flash[:notice] = 'You must be logged in to add a book.'
+			redirect_to login_path
+		end
 	end
 
 	def create
-		book = Book.new(book_params)
-		author = Author.find(book_params[:author_id])
-		if book.save
-			redirect_to author_path(author)
+		if current_user
+			book = Book.new(book_params)
+			author = Author.find(book_params[:author_id])
+			if book.save
+				redirect_to author_path(author)
+			else
+				flash[:error] = book.errors.full_messages.join(", ")
+				redirect_to new_book_path(author)
+			end
 		else
-			redirect_to new_book_path(author)
+			redirect_to login_path
 		end
 	end
 
 	def destroy
-		book_id = params[:id]
-		book = Book.find_by_id(book_id)
-		book.destroy
-		redirect_to books_path
+		if current_user
+			book_id = params[:id]
+			book = Book.find_by_id(book_id)
+			book.destroy
+			redirect_to books_path
+		else
+			flash[:notice] = 'You must be logged in to delete a book.'
+			redirect_to login_path
+		end	
 	end
 
 	private

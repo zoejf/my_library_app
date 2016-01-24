@@ -11,23 +11,39 @@ class AuthorsController < ApplicationController
 	end
 
 	def new
-		@author = Author.new
-		render :new
+		if current_user
+			@author = Author.new
+			render :new
+		else
+			flash[:notice] = 'You must be logged in to add an author.'
+			redirect_to login_path
+		end
 	end
 
 	def create	
-		author = Author.new(author_params)
-		if author.save
-			redirect_to author_path(author)
+		if current_user
+			author = Author.new(author_params)
+			if author.save
+				flash[:notice] = 'Author added to Library.'
+				redirect_to author_path(author)
+			else
+				flash[:error] = author.errors.full_messages.join(", ")
+				redirect_to new_author_path
+			end
 		else
-			redirect_to new_author_path
+			redirect_to login_path
 		end
 	end
 
 	def edit
-		author_id = params[:id]
-		@author = Author.find_by_id(author_id)
-		render :edit
+		if current_user
+			author_id = params[:id]
+			@author = Author.find_by_id(author_id)
+			render :edit
+		else
+			flash[:notice] = 'You must be logged in to edit an author'
+			redirect_to login_path
+		end
 	end
 
 	def update
@@ -38,10 +54,15 @@ class AuthorsController < ApplicationController
 	end
 
 	def destroy
-		author_id = params[:id]
-		author = Author.find_by_id(author_id)
-		author.destroy
-		redirect_to authors_path
+		if current_user 	
+			author_id = params[:id]
+			author = Author.find_by_id(author_id)
+			author.destroy
+			redirect_to authors_path
+		else
+			flash[:notice] = 'You must be logged in to delete an author'
+			redirect_to login_path
+		end
 	end
 
 	private

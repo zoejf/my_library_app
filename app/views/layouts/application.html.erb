@@ -39,6 +39,14 @@
 	  </div><!-- end .container-fluid -->
 	</nav>
 
+	<div class="container">
+		<div class="row">
+			<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert alert-danger' : 'alert alert-info'}" %>
+			<% end %>
+		</div>
+	</div>
+
 	<%= yield %>
 
 </body>

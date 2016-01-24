@@ -26,3 +26,5 @@ fitzgerald.books << gatsby
 diaz.books << [oscar_wao, lose_her]
 orwell.books << eighty_four
 adichie.books << amer
+
+guest = User.create({name: "Guest", email: "guest@test.com", password: "mylibrary"})
