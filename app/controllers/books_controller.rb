@@ -28,6 +28,7 @@ class BooksController < ApplicationController
 			book = Book.new(book_params)
 			author = Author.find(book_params[:author_id])
 			if book.save
+				flash[:notice] = 'New book added successfully.'
 				redirect_to author_path(author)
 			else
 				flash[:error] = book.errors.full_messages.join(", ")
