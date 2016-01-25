@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- root 'authors#index'
+ root 'pages#index'
 
  #authors
  resources :authors
@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 end
 
 
-#      Prefix Verb   URI Pattern                  Controller#Action
-#        root GET    /                            authors#index
+#     Prefix Verb   URI Pattern                  Controller#Action
+#        root GET    /                            pages#index
 #     authors GET    /authors(.:format)           authors#index
 #             POST   /authors(.:format)           authors#create
 #  new_author GET    /authors/new(.:format)       authors#new
@@ -41,3 +41,4 @@ end
 #       login GET    /login(.:format)             sessions#new
 #             POST   /login(.:format)             sessions#create
 #      logout GET    /logout(.:format)            sessions#destroy
+

@@ -1,0 +1,23 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero {
+	background-image: asset-data-url("book_background.jpeg");
+	background-size: cover;
+	height: 100vh;
+}
+
+#welcome {
+	text-align: center;
+	color: #EEE;
+	padding-top: 40px;
+
+	.btn {
+		margin-top: 20px;
+	}
+
+	h1 {
+		font-family: 'Special Elite', cursive;
+	}
+}

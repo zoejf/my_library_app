@@ -8,9 +8,5 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
   
-  def sort_year 
-  	@sort_year
-  end
-  helper_method :sort_year
 
 end

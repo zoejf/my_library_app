@@ -15,6 +15,21 @@
  *= require_self
  */
 
+.navbar {
+	border-radius: 0px;  
+}
+
+.navbar-brand {
+	font-family: 'Special Elite', cursive;
+}
+
+.navbar-default {
+	background-color: #EEE;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #6F401A;
+}
 
 .hidden {
 	display: none;
@@ -22,11 +37,6 @@
 
 .right-btn {
 	float:right;
-}
-
-h2, h1 {
-	text-align: center;
-	margin-bottom: 25px;
 }
 
 .heading {
@@ -37,6 +47,11 @@ h2, h1 {
 .header {
 	font-size: 2.3em;
 	font-weight: bold;
+	font-family: 'Special Elite', cursive;
+}
+
+.session {
+	text-align: center;
 }
 
 .author-photo, .book-photo {
@@ -49,4 +64,14 @@ h2, h1 {
 .submit-btn {
 	margin: 0px auto;
 	display: block;
+}
+
+a {
+	color: #6F401A;
+	text-decoration: none;
+}
+
+a:hover {
+	color:black;
+	text-decoration: none;
 }
