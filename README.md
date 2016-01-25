@@ -8,7 +8,8 @@ My Classics Library is an app that organizes classic authors and their books. An
 - Ruby on Rails
 - PostgreSQL
 - bcrypt
-- RSPEC
+- RSPEC with FFaker
+- Bootstrap
 
 ###To Run Locally
 - Clone github project link
