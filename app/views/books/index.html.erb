@@ -10,7 +10,9 @@
 			<div class="col-sm-3 col-xs-6">
 				<div class="book well">
 					<div>
-						<img src="<%= book.image %>" alt="Cover image of <%= book.title %>" class="book-photo">
+						<%= link_to(book_path(book)) do %>
+							<img src="<%= book.image %>" alt="Cover image of <%= book.title %>" class="book-photo">
+						<% end %>
 					</div>
 					<div class="book-title">
 						<strong><%= link_to "#{book.title}", book_path(book) %></strong><br>	

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 end
 
 
-#     Prefix Verb   URI Pattern                  Controller#Action
+#      Prefix Verb   URI Pattern                  Controller#Action
 #        root GET    /                            pages#index
 #     authors GET    /authors(.:format)           authors#index
 #             POST   /authors(.:format)           authors#create
