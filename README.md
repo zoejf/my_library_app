@@ -10,7 +10,7 @@ My Classics Library is an app that organizes classic authors and their books. An
 - bcrypt
 - RSPEC
 
-##To Run Locally
+###To Run Locally
 - Clone github project link
 - `bundle install`
 - Set up database with: 
@@ -20,8 +20,9 @@ My Classics Library is an app that organizes classic authors and their books. An
 - Start a server with `rails s`
 - Tests can be run with `rspec` command
 
-##With more time I would ...
+###With more time I would try ...
 - Implement image uploading and saving with Paperclip gem 
 - Use SASS to create more concise stylesheets
-- Create user profile page for and functionality saving favorite books/authors
+- Create user profile page for and functionality saving favorite books or authors
 - OAuth: Allow users to log in with <a href="https://www.goodreads.com/">Goodreads</a>
+
