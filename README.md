@@ -15,6 +15,7 @@ My Classics Library is an app that organizes classic authors and their books. An
 - Clone github project link
 - `bundle install`
 - Set up database with: 
+	* open PostgreSQL
 	* `rake db:create`
 	* `rake db:migrate`
 	* `rake db:seed`
