@@ -1,29 +1,27 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1">
-			<div class="row heading">
-				<span class="header"><%= @book.title %></span>
-				<%= link_to "All Books by #{@author.full_name}", author_path(@author), class: "btn btn-default right-btn" %>
-			</div>
-			<div class="row"> 
-				<div class="col-xs-5 book-cover">
-					<div class="well">
-						<img src="<%= @book.image %>" alt="Cover image for <%= @book.title %>" class="book-photo-lrg"><br>
-						<% if current_user %>
-							<%= link_to "Delete", book_path(@book), method: :delete, class: "btn btn-default" %>
-						<% end %>
-					</div>
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1">
+		<div class="row heading">
+			<span class="header"><%= @book.title %></span>
+			<%= link_to "All Books by #{@author.full_name}", author_path(@author), class: "btn btn-default right-btn" %>
+		</div>
+		<div class="row"> 
+			<div class="col-xs-5 book-cover">
+				<div class="well">
+					<img src="<%= @book.image %>" alt="Cover image for <%= @book.title %>" class="book-photo-lrg"><br>
+					<% if current_user %>
+						<%= link_to "Delete", book_path(@book), method: :delete, class: "btn btn-default" %>
+					<% end %>
 				</div>
-				<div class="col-xs-7 book-details">
-					<div>
-						<strong>Author:</strong> <%= @author.full_name %>
-					</div>
-					<div>
-						<strong>Original Publication Year: </strong> <%= @book.release_year %>
-					</div>
-					<div>
-						<p class="synopsis"><%= @book.synopsis %></p>
-					</div>
+			</div>
+			<div class="col-xs-7 book-details">
+				<div>
+					<strong>Author:</strong> <%= @author.full_name %>
+				</div>
+				<div>
+					<strong>Original Publication Year: </strong> <%= @book.release_year %>
+				</div>
+				<div>
+					<p class="synopsis"><%= @book.synopsis %></p>
 				</div>
 			</div>
 		</div>

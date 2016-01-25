@@ -16,6 +16,10 @@
  */
 
 
+.hidden {
+	display: none;
+}
+
 .right-btn {
 	float:right;
 }

@@ -1,26 +1,46 @@
-<div class="container">
-	<div class="row heading">
-		<span class="header">All Books</span>
-	</div>
+<div class="row heading">
+	<span class="header">All Books</span>
+	<button class="btn btn-info right-btn" id="sort-year">Sort by Date Published</button>
+	<button class="btn btn-info right-btn hidden" id="sort-title">Sort by Title</button>
+</div>
 
-	<div class="row">  
-	<% @books.order("title asc").each do |book| %>
-		<div class="col-sm-3 col-xs-6">
-			<div class="book well">
-				<div>
-					<img src="<%= book.image %>" alt="Cover image of <%= book.title %>" class="book-photo">
-				</div>
-				<div class="book-title">
-					<strong><%= link_to "#{book.title}", book_path(book) %></strong><br>	
-				</div>
-				by 
-				<%= link_to "#{book.author.full_name}", author_path(book.author) %>
-				<div>
-					<p>Originally Published: <%= book.release_year %></p>
+<div class="row">  
+	<div class="books-sort-title">
+		<% @books.by_title.each do |book| %>
+			<div class="col-sm-3 col-xs-6">
+				<div class="book well">
+					<div>
+						<img src="<%= book.image %>" alt="Cover image of <%= book.title %>" class="book-photo">
+					</div>
+					<div class="book-title">
+						<strong><%= link_to "#{book.title}", book_path(book) %></strong><br>	
+					</div>
+					by 
+					<%= link_to "#{book.author.full_name}", author_path(book.author) %>
+					<div>
+						<p>Originally Published: <%= book.release_year %></p>
+					</div>
 				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
 	</div>
-
+	<div class="books-sort-year hidden">
+		<% @books.by_year.each do |book| %>
+			<div class="col-sm-3 col-xs-6">
+				<div class="book well">
+					<div>
+						<img src="<%= book.image %>" alt="Cover image of <%= book.title %>" class="book-photo">
+					</div>
+					<div class="book-title">
+						<strong><%= link_to "#{book.title}", book_path(book) %></strong><br>	
+					</div>
+					by 
+					<%= link_to "#{book.author.full_name}", author_path(book.author) %>
+					<div>
+						<p>Originally Published: <%= book.release_year %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>

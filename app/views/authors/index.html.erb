@@ -1,34 +1,31 @@
-<div class="container">
-	<div class="row heading">
-		<span class="header">All Authors</span>
-		<%= link_to "Add Author", new_author_path, class: "btn btn-default right-btn" %>
-	</div>
+<div class="row heading">
+	<span class="header">All Authors</span>
+	<%= link_to "Add Author", new_author_path, class: "btn btn-default right-btn" %>
+</div>
 
-	<div class="row">
-	<% @authors.order("last_name asc").each do |author| %>
-			<div class="col-sm-3 col-xs-6 author">
-				<%= link_to(author_path(author)) do %>
-					<div class="well">
-						<div>
-							<img src="<%= author.image %>" alt="Portrait of <%= author.full_name %>" class="author-photo">
-						</div>
-						<strong><%= author.full_name %></strong><br>
-						<div class="books-count">
-							<span>
-								<%= author.book_count %> 
-								<% if author.book_count == 1 %> 
-									Book
-								<% else %>
-									Books
-								<% end %>
-							<span>
-						</div>
+<div class="row">
+<% @authors.order("last_name asc").each do |author| %>
+		<div class="col-sm-3 col-xs-6 author">
+			<%= link_to(author_path(author)) do %>
+				<div class="well">
+					<div>
+						<img src="<%= author.image %>" alt="Portrait of <%= author.full_name %>" class="author-photo">
 					</div>
-				<% end %>
-			</div>
-	<% end %>
-	</div>
-	
+					<strong><%= author.full_name %></strong><br>
+					<div class="books-count">
+						<span>
+							<%= author.book_count %> 
+							<% if author.book_count == 1 %> 
+								Book
+							<% else %>
+								Books
+							<% end %>
+						<span>
+					</div>
+				</div>
+			<% end %>
+		</div>
+<% end %>
 </div>
 
 

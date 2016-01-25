@@ -1,47 +1,43 @@
-<div class="container">
-	<div class="row heading">
-		<span class="header"><%= @author.full_name %></span>
-		<%= link_to "Add a Book by #{@author.last_name}", new_book_path(@author), class: "btn btn-default right-btn" %>
-	</div>
-	
-	<div class="row">
-		<div class="col-xs-5">
-			<div class="well author-details"> 
-				<div>
-					<img src="<%= @author.image %>" alt="Portrait of <%= @author.full_name %>" class="author-photo-lrg">
-				</div>
-				<strong>Year of Birth: </strong><%= @author.year_born %> <br>
-				<% if @author.year_died %>
-					<strong> Year of Death: </strong><%= @author.year_died %>
-				<% end %>
-				<% if current_user %>
-					<div class="buttons">
-						<%= link_to "Edit", edit_author_path(@author), class: "btn btn-success" %>
-						<%= link_to "Delete", author_path(@author), method: :delete, class: "btn btn-default" %>
-					</div>
-				<% end %>
-			</div>
-		</div>
-		<div class="col-xs-7">
-			<p><%= @author.bio %></p>
-			<% if @author.books.any? %>
-				<div class="row">
-				<% @author.books.each do |book| %>
-					<div class="col-xs-5"> 
-						<div class="well book-thumbnail-container">
-							<img src="<%= book.image %>" alt="Cover image for <%= book.title %>" class="book-thumbnail"><br>
-							<strong><%= link_to "#{book.title}", book_path(book) %></strong> (<%= book.release_year %>)
-						</div>
-					</div>
-				<% end %>	
-				</div>
-			<% else %>
-				<h4>
-					No books listed yet... <%= link_to "You can add one.", new_book_path(@author) %>
-				</h4>
-			<% end %>
-		</div>	
-	</div>
-	</div>
+<div class="row heading">
+	<span class="header"><%= @author.full_name %></span>
+	<%= link_to "Add a Book by #{@author.last_name}", new_book_path(@author), class: "btn btn-default right-btn" %>
+</div>
 
+<div class="row">
+	<div class="col-xs-5">
+		<div class="well author-details"> 
+			<div>
+				<img src="<%= @author.image %>" alt="Portrait of <%= @author.full_name %>" class="author-photo-lrg">
+			</div>
+			<strong>Year of Birth: </strong><%= @author.year_born %> <br>
+			<% if @author.year_died %>
+				<strong> Year of Death: </strong><%= @author.year_died %>
+			<% end %>
+			<% if current_user %>
+				<div class="buttons">
+					<%= link_to "Edit", edit_author_path(@author), class: "btn btn-success" %>
+					<%= link_to "Delete", author_path(@author), method: :delete, class: "btn btn-default" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-xs-7">
+		<p><%= @author.bio %></p>
+		<% if @author.books.any? %>
+			<div class="row">
+			<% @author.books.by_title.each do |book| %>
+				<div class="col-xs-5"> 
+					<div class="well book-thumbnail-container">
+						<img src="<%= book.image %>" alt="Cover image for <%= book.title %>" class="book-thumbnail"><br>
+						<strong><%= link_to "#{book.title}", book_path(book) %></strong> (<%= book.release_year %>)
+					</div>
+				</div>
+			<% end %>	
+			</div>
+		<% else %>
+			<h4>
+				No books listed yet... <%= link_to "You can add one.", new_book_path(@author) %>
+			</h4>
+		<% end %>
+	</div>	
 </div>
